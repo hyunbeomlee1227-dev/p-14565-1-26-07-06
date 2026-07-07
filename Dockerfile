@@ -16,7 +16,7 @@ COPY build.gradle.kts .
 COPY settings.gradle.kts .
 
 # 종속성 다운로드 (캐싱 최적화)
-RUN gradle clean build -x test --no-daemon
+RUN ./gradlew dependencies --no-daemon
 
 # 소스 코드 복사
 COPY src src
